@@ -20,3 +20,4 @@ let twoSumTwoPointers = (array, target) => {
   // This code will be reached only when our base condition is satisfied
   return [i, j];
 };
+//two pointers moves either pointer based on a conditional
