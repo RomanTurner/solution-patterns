@@ -32,10 +32,23 @@ function sameFrequency(a, b) {
     return false;
   }
 
-  
-
-  console.log(aMap, bMap);
+  for (let [key, val] of aMap) {
+    const testVal = bMap.get(key);
+    // in cases of an undefined value, make sure the key
+    // actually exists on the object so there are no false positives
+    if (testVal !== val || (testVal === undefined && !bMap.has(key))) {
+      return false;
+    }
+  }
+  return true
 }
 
-sameFrequency(234234, 2342453);
-toStringArray(345);
+console.log({
+    test1:sameFrequency(123124, 12342),
+    test2:sameFrequency(12, 21),
+    test3:sameFrequency(333, 333),
+    test4:sameFrequency(34, 14),
+    test5:sameFrequency(354421, 123445),
+
+})
+
