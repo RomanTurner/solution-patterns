@@ -141,5 +141,7 @@ console.log(flattened);
 console.log(flattened2);
 console.log([1, 2, 3, [4, 5]].flat(2)); // [1, 2, 3, 4, 5]
 
+
+
 // flatten([[1],[2],[3]]) // [1,2,3]
 // flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]) // [1,2,3
