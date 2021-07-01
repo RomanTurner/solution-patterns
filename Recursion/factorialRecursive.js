@@ -136,14 +136,16 @@ function* flatten(array, depth) {
 const arr = [1, 2, [3, 4, [5, 6]]];
 const arr2 = [1, [2, [3, 4], [[5]]]]
 const arr3 = [[1],[2],[3]]
+const arr4 = [[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]
 const flattened = [...flatten(arr, Infinity)];
 const flattened2 = [...flatten(arr2, Infinity)];
 const flattened3 = [...flatten(arr3, Infinity)];
+const flattened4 = [...flatten(arr4, Infinity)];
 console.log(flattened);
 console.log(flattened2);
 console.log(flattened3);
+console.log(flattened4);
 console.log([1, 2, 3, [4, 5]].flat(2)); // [1, 2, 3, 4, 5]
 
 
 
-// flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]) // [1,2,3
