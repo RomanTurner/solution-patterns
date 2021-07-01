@@ -68,18 +68,6 @@ console.log(someRecursive([4, 6, 8, 9], isOdd)); // true
 console.log(someRecursive([4, 6, 8], isOdd)); // false
 console.log(someRecursive([4, 6, 8], (val) => val > 10)); // false
 
-// function flatten(oldArr) {
-//   var newArr = [];
-//   for (var i = 0; i < oldArr.length; i++) {
-//     if (Array.isArray(oldArr[i])) {
-//       newArr = newArr.concat(flatten(oldArr[i]));
-//     } else {
-//       newArr.push(oldArr[i]);
-//     }
-//   }
-//   return newArr;
-// }
-
 
 //concat > spread with many iteratables. 
 //spread > concat single interatble
