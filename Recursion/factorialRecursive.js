@@ -85,17 +85,17 @@ console.log(someRecursive([4, 6, 8], (val) => val > 10)); // false
 //spread > concat single interatble
 //https://stackoverflow.com/questions/48865710/spread-operator-vs-array-concat
 
-function flatten(arr) {
-  let newArr = [];
-  for (let i = 0; i < arr.length; i++) {
-      if (Array.isArray(arr[i])) {
-          newArr = newArr.concat(flatten(arr[i]));
-    } else {
-      newArr.push(arr[i]);
-    }
-  }
-    return newArr
-}
+// function flatten(arr) {
+//   let newArr = [];
+//   for (let i = 0; i < arr.length; i++) {
+//       if (Array.isArray(arr[i])) {
+//           newArr = newArr.concat(flatten(arr[i]));
+//     } else {
+//       newArr.push(arr[i]);
+//     }
+//   }
+//     return newArr
+// }
 
 //flat npm package 
 function flat() {
@@ -134,10 +134,12 @@ function* flatten(array, depth) {
 }
 
 const arr = [1, 2, [3, 4, [5, 6]]];
+const arr2 = [1, [2, [3, 4], [[5]]]]
 const flattened = [...flatten(arr, Infinity)];
+const flattened2 = [...flatten(arr2, Infinity)];
 console.log(flattened);
+console.log(flattened2);
 console.log([1, 2, 3, [4, 5]].flat(2)); // [1, 2, 3, 4, 5]
 
-// flatten([1, [2, [3, 4], [[5]]]]) // [1, 2, 3, 4, 5]
 // flatten([[1],[2],[3]]) // [1,2,3]
 // flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]) // [1,2,3
