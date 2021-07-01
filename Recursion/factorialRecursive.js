@@ -107,20 +107,7 @@ function flat() {
 
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
 
-//Generator example
-function* flatten(array, depth) {
-  if (depth === undefined) {
-    depth = 1;
-  }
-  for (const item of array) {
-    if (Array.isArray(item) && depth > 0) {
-      yield* flatten(item, depth - 1);
-    } else {
-      yield item;
-    }
-  }
-}
-
+/
 const arr = [1, 2, [3, 4, [5, 6]]];
 const arr2 = [1, [2, [3, 4], [[5]]]]
 const arr3 = [[1],[2],[3]]
