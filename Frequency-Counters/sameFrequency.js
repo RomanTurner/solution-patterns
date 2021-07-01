@@ -27,7 +27,7 @@ const pipe =
 function sameFrequency(a, b) {
   const aMap = pipe(toStringArray, frequencyMap)(a);
   const bMap = pipe(toStringArray, frequencyMap)(b);
-    
+
   if (aMap.size !== bMap.size) {
     return false;
   }
@@ -43,12 +43,5 @@ function sameFrequency(a, b) {
   return true
 }
 
-console.log({
-    test1:sameFrequency(123124, 12342),
-    test2:sameFrequency(12, 21),
-    test3:sameFrequency(333, 333),
-    test4:sameFrequency(34, 14),
-    test5:sameFrequency(354421, 123445),
 
-})
 
