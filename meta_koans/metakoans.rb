@@ -1,9 +1,5 @@
 #
-# metakoans.rb is an arduous set of exercises designed to stretch
-# meta-programming muscle.  the focus is on a single method 'attribute' which
-# behaves much like the built-in 'attr', but whose properties require delving
-# deep into the depths of meta-ruby.  usage of the 'attribute' method follows
-# the general form of
+
 #   
 #   class C
 #     attribute 'a'
