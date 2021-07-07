@@ -68,24 +68,23 @@ console.log(someRecursive([4, 6, 8, 9], isOdd)); // true
 console.log(someRecursive([4, 6, 8], isOdd)); // false
 console.log(someRecursive([4, 6, 8], (val) => val > 10)); // false
 
-
-//concat > spread with many iteratables. 
+//concat > spread with many iteratables.
 //spread > concat single interatble
 //https://stackoverflow.com/questions/48865710/spread-operator-vs-array-concat
 
 function flattenExample(arr) {
   let newArr = [];
   for (let i = 0; i < arr.length; i++) {
-      if (Array.isArray(arr[i])) {
-          newArr = newArr.concat(flatten(arr[i]));
+    if (Array.isArray(arr[i])) {
+      newArr = newArr.concat(flatten(arr[i]));
     } else {
       newArr.push(arr[i]);
     }
   }
-    return newArr
+  return newArr;
 }
 
-//flat npm package 
+//flat npm package
 function flat() {
   var depth = isNaN(arguments[0]) ? 1 : Number(arguments[0]);
   return depth
@@ -105,6 +104,8 @@ function flat() {
     : Array.prototype.slice.call(this);
 }
 
+
+
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
 
 //Generator example
@@ -122,19 +123,18 @@ function* flatten(array, depth) {
 }
 
 const arr = [1, 2, [3, 4, [5, 6]]];
-const arr2 = [1, [2, [3, 4], [[5]]]]
-const arr3 = [[1],[2],[3]]
-const arr4 = [[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]
+const arr2 = [1, [2, [3, 4], [[5]]]];
+const arr3 = [[1], [2], [3]];
+const arr4 = [[[[1], [[[2]]], [[[[[[[3]]]]]]]]]];
 const flattened = [...flatten(arr, Infinity)];
 const flattened2 = [...flatten(arr2, Infinity)];
 const flattened3 = [...flatten(arr3, Infinity)];
-const flattened4 = [...flatten(arr4, Infinity)];
+const flattened4 = arr3.flat();
 console.log(flattened);
 console.log(flattened2);
 console.log(flattened3);
-console.log(flattened3);
+console.log(flattened4);
 console.log([1, 2, 3, [4, 5]].flat(2)); // [1, 2, 3, 4, 5]
-
 
 //Takes array of strings and will capitalize the string
 function capitalizeWords(array) {
