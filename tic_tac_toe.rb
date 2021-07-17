@@ -10,7 +10,7 @@ class TicTacToe
         end  
 
         def turn
-            @play = !@player
+            @player = !@player
          if @player
             return 'x'
          else 
@@ -19,13 +19,13 @@ class TicTacToe
         end
 
         def is_valid?
-            @board[x][y].nil? && @board[x][y] != 'x' && @board[x][y] != 'o'
+            @board[x][y].nil? && @board[x][y] != 'x' && @board[x][y] != 'o' 
         end
 
         def is_win?
-         @board[x].uniq? 
+         !@board[x].uniq? 
          yboard = @board[0..2].transpose()
-         yboard[x].uniq?
+         !yboard[x].uniq?
         end
 
         def move(x,y)
@@ -46,7 +46,7 @@ end
 #init grid
 
 [
-    [1, 2, 3],
+    [x, x, x].uniq?
     [2, 4, 5],
     [6, 7, 8]
 ]
