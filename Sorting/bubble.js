@@ -72,5 +72,3 @@ function refactoredBubbleSort(arr) {
     }
     return arr;
 }
-
-console.log(refactoredBubbleSort(x));
