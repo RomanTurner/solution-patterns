@@ -1,21 +1,9 @@
 
 
-// const bubbleSort = (arr) => {
-//     arr.forEach((el, index) => {
-//         for (let i = 0; i < arr.length; i++){
-//             let first = arr[i];
-//             let second = arr[i+1]
-//             if (first > second) {
-//                 swap(arr)
-//             }
-//         }
-//     })
-// }
-
+//
 /* 
 git add. 
 git commit -m 'dsa'
-git
 Naive
 
 function naiveBubbleSort(arr) {
