@@ -14,7 +14,7 @@
 
 /* 
 git add. 
-git commit -m 'dsa'
+git commit -m 'd
 Naive
 
 function naiveBubbleSort(arr) {
