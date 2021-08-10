@@ -80,8 +80,4 @@ const test2 = ["queen", "ace"];
 
 console.log(BlackjackHighest(test));
 console.log(BlackjackHighest(test2));
-/*
-git add . 
-git commit -m 'sp'
-git
-*/
+
