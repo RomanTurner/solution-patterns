@@ -1,6 +1,6 @@
 /* 
 Radix sort takes advantage of the property of numbers, where if they have 
-more digits they will be larger.
+more digits they will be larger (fuckin' smaht).
 
 We create 10 containers, 0-9 and based on the last digit based on iteration,
 we place the number in those containers that coorellate to the last digit. 
