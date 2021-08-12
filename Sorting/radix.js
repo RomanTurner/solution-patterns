@@ -38,6 +38,7 @@ function mostDigits(nums) {
 console.log(mostDigits([1234, 7, 8, 9]));
 //******** */
 
+// The actual sort function- Embrace it. 
 function radixSort(nums) {
     let maxDigitCount = mostDigits(nums);
     for (let k = 0; k < maxDigitCount; k++) {
