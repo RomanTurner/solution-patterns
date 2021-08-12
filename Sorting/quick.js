@@ -15,24 +15,40 @@ An array, a start index, and an end index (can default to 0, and arr.length -1)
     -Swap the starting element (aka the pivot) witht the pivot index
     -Return pivot index
 */
-
-let x = [1, 10, 50, 107];
-let y = [7, 8, 23, 37, 99];
+let x = [4, 8, 2, 1, 5, 7, 6, 3];
+let y = [7, 23, 15, 37, 4];
 let w = [...x, ...y];
 
-function swap(arr, index1, index2) {
-    [arr[index1], arr[index2]] = [arr[index2], arr[index1]];
-    return arr
+function swap(arr, indx1, indx2) {
+  [arr[indx2], arr[indx1]] = [arr[indx1], arr[indx2]];
+  return arr;
 }
 
+function pivotFinder(arr, start = 0, end = arr.length + 1) {
+  let pivot = arr[start];
+  let swapIndx = start;
 
-function pivot(arr, start=0, end=arr.length-1) {
-    let pivotIndex = start;
-    for (let i = 1; i < end; i++){
-        if (arr[i] < arr[pivotIndex]) {
-            swap(arr, arr[i], arr[pivotIndex])
-        } 
+  for (let i = start + 1; i < arr.length; i++) {
+    if (pivot > arr[i]) {
+      swapIndx++;
+      swap(arr, swapIndx, i);
+      console.log(arr);
     }
+  }
+  swap(arr, start, swapIndx);
+  return swapIndx;
 }
 
-console.log(swap(x, 0, 1));
+function quickSort(arr, left = 0, right = arr.length - 1) {
+  if (left < right) {
+    let pivot = pivotFinder(arr, left, right);
+    quickSort(arr, left, pivot - 1);
+    quickSort(arr, pivot + 1, right);
+  }
+  return arr;
+}
+// [4, 8, 2, 1, 5, 7, 6, 3]
+
+const mid = Math.floor(x.length / 2);
+console.log(quickSort(x));
+
