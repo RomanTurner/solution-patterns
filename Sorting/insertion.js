@@ -1,9 +1,5 @@
 /* 
 Insertion Sort
-This is something I need to finish
-git add . 
-git commit -m 'sp'
-git push
 */
 const x = [19, 44, 38, 5, 22, 7];
 function insertionSort(arr, n) {
@@ -48,25 +44,8 @@ const insertionSortImmutable = (array) => {
 
 console.log(insertionSortImmutable(x));
 
-
-
-// A utility function to print an array of size n
-// function printArray(arr, n)
-// {
-//     let i;
-//     for (i = 0; i < n; i++)
-//         document.write(arr[i] + " ");
-//     document.write("<br>");
-// }
-
-// Driver code
-//     let arr = [12, 11, 13, 5, 6 ];
-//     let n = arr.length;
-
-//     insertionSort(arr, n);
-// printArray(arr, n);
-
 const n = x.length;
 
 console.log(insertionSort(x, n));
 console.log(insertionSortCS(x));
+ 
