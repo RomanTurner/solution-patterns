@@ -158,8 +158,13 @@ class singlyLinkedList {
     }
     console.log(this.print());
   }
-    recursiveReverse() {
-      
+  recursiveReverse(head) {
+    if (!head) return null;
+    if (!head.next) return head;
+    let rev = this.recursiveReverse(head.next);
+    head.next.next = head;
+    head.next = null;
+    return rev;
   }
 }
 
@@ -177,5 +182,5 @@ console.log(list.length);
 console.log(list.get(0));
 console.log(list.set(0, "PLONK"));
 console.log(list.get(0));
-list.reverse();
-console.log(list.reverseRecursively());
+//list.reverse();
+console.log(list.recursiveReverse(list.head));
