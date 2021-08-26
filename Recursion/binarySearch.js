@@ -4,7 +4,7 @@ function binarySearch(arr, target, start = 0, end = arr.length - 1) {
      case arr[mid] === target:
        return mid;
      case end - start === 0:
-       return mid;
+       return "not found";
      case arr[mid] < target:
        return binarySearch(arr, target, mid + 1, end);
      case arr[mid] > target:
@@ -14,3 +14,6 @@ function binarySearch(arr, target, start = 0, end = arr.length - 1) {
 
 console.log(binarySearch([1, 2, 3, 4, 5], 5));
 console.log(binarySearch([1, 2], 2));
+console.log(binarySearch([1, 2, 3, 4, 5], 3));
+console.log(binarySearch([1, 2, 5, 6, 7], 3));
+console.log(binarySearch([1, 2, 3, 4, 5, 6], 7));
