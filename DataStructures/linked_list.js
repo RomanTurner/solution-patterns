@@ -144,19 +144,18 @@ class singlyLinkedList {
   }
   reverse() {
     if (this.empty()) return this;
-    let node = this.head;
-    this.head = this.tail;
-    this.tail = node;
-    let pre = null,
-      next = null;
-
-    while (node !== null) {
-      next = node.next;
-      node.next = pre;
-      pre = node;
-      node = next;
+    let prev = null;
+    let current = this.head;
+    this.tail = this.head;
+    let next = null;
+    while (current !== null) {
+      next = current.next;
+      current.next = prev;
+      prev = current;
+      current = next;
     }
-    console.log(this.print());
+    this.head = prev;
+    return prev;
   }
   recursiveReverse(head) {
     if (!head) return null;
@@ -169,18 +168,10 @@ class singlyLinkedList {
 }
 
 const list = new singlyLinkedList();
-list.push("blarg");
-list.push("dorg");
-list.push("porj");
-list.push("delete me");
+list.push(1);
+list.push(2);
+list.push(3);
+list.push('delete me');
 list.pop();
 console.log(list.empty());
-list.unshift("Pleeb");
-list.unshift("delete me");
-list.shift();
-console.log(list.length);
-console.log(list.get(0));
-console.log(list.set(0, "PLONK"));
-console.log(list.get(0));
-//list.reverse();
-console.log(list.recursiveReverse(list.head));
+list.reverse();
