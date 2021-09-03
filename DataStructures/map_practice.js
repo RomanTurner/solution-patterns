@@ -8,7 +8,7 @@ map1.set('b', 2);
 map1.set('c', 3);
 
 for (let el of map1) {
-    console.log(el); // ['a', 1] , ['b', 2], ['c', 3]
+  console.log(el); // ['a', 1] , ['b', 2], ['c', 3]
 }
 
 //Equality is based on the same-value-zero quality
@@ -16,23 +16,23 @@ for (let el of map1) {
 
 //Parsing and Stringifying MAPS with reviver and replacer secondary arguments
 function replacer(key, value) {
-    if (value instanceof Map) {
-        return {
-            dataType: 'Map',
-            value: [...value]
-        };
-    } else {
-        return value;
-    }
+  if (value instanceof Map) {
+    return {
+      dataType: 'Map',
+      value: [...value],
+    };
+  } else {
+    return value;
+  }
 }
 
 function reviver(key, value) {
-    if (typeof value === 'object' && value !== null) {
-        if (value.dataType === 'Map') {
-            return new Map(value.value);
-        }
+  if (typeof value === 'object' && value !== null) {
+    if (value.dataType === 'Map') {
+      return new Map(value.value);
     }
-    return value;
+  }
+  return value;
 }
 
 //Usage
@@ -65,31 +65,29 @@ Sets the value for the key in the Map object. Returns the Map object.
 
 const map2 = new Map();
 map2.set('blag', 5);
-map2.set('barge', 'marge')
+map2.set('barge', 'marge');
 /* 
 Map.prototype.delete(key)
 Returns true if an element in the Map object existed and has been removed, or false if the element does not exist. Map.prototype.has(key) will return false afterwards.
 */
 console.log(map2.delete('barge'));
 
-
 console.log(map2);
 
-const swapMap = new Map()
+const swapMap = new Map();
 for (let [key, value] of map1) {
-    console.log(key + ' = ' + value);
-    swapMap.set(value, key)
+  console.log(key + ' = ' + value);
+  swapMap.set(value, key);
 }
 console.log(swapMap);
 
 const clone = new Map(map1);
 console.log(map1, clone);
 
-
 var arr = [5, 5, 5, 2, 2, 2, 2, 2, 9, 4];
 
 const frequencyCounter = arr.reduce((acc, el) => {
-    return acc.set(el, (acc.get(el) || 0) + 1)
+  return acc.set(el, (acc.get(el) || 0) + 1);
 }, new Map());
 
 console.log(frequencyCounter);
@@ -103,7 +101,7 @@ Use map.entries() to get the pairs [element, frequency]
 */
 
 let uniqueElements = frequencyCounter.keys();
-console.log(...uniqueElements)
+console.log(...uniqueElements);
 
 let occurrences = frequencyCounter.values();
 console.log(...occurrences);
