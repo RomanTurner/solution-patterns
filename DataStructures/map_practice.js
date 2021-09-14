@@ -94,8 +94,6 @@ console.log(frequencyCounter);
 
 /* 
 Use map.keys() to get unique elements
-git -am 'map'
-
 Use map.values() to get the occurrences
 
 Use map.entries() to get the pairs [element, frequency]
